@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {{ form_start(form)}}
+    {{ form_rest(form)}}
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-primary">Valider</button>
+        <a href="{{path('user_index')}}" class="btn btn-primary">Retourner à la liste</a>
+    </div>
+    {{ form_end(form)}}
+{% endblock %}

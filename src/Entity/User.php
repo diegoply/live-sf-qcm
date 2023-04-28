@@ -18,6 +18,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
+    #[ORM\Column(length: 180)]
+    private ?string $firstName = null;
+
+    #[ORM\Column(length: 180)]
+    private ?string $lastName = null;
+
     #[ORM\Column]
     private array $roles = [];
 
@@ -95,5 +101,33 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+ 
+    public function getFirstName() : ?string
+    {
+        return $this->firstName;
+    }
+
+  
+    public function setFirstName($firstName) : self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+
+    public function getLastName() : ?string
+    {
+        return $this->lastName;
+    }
+
+
+    public function setLastName($lastName) : self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
     }
 }
