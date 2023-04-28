@@ -18,12 +18,16 @@ class AppFixtures extends Fixture
         $user = new User();
         $user->setEmail('admin@site.com');
         $user->setRoles(['ROLE_ADMIN']);
+        $user->setFirstName('Admin');
+        $user->setLastName('Admin');
         $user->setPassword($this->userPasswordHasherInterface->hashPassword($user,'password'));
         $manager->persist($user);
 
         $user = new User();
         $user->setEmail('formateur1@site.com');
         $user->setRoles(['ROLE_FORMATEUR']);
+        $user->setFirstName('Formateur');
+        $user->setLastName('Formateur');
         $user->setPassword($this->userPasswordHasherInterface->hashPassword($user,'password'));
         $manager->persist($user);
 
