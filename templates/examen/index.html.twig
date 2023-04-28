@@ -3,16 +3,16 @@
 {% block title %}Examen index{% endblock %}
 
 {% block body %}
-    <h1>Examen index</h1>
+    <h1>Liste des examens</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Code</th>
-                <th>Statut</th>
-                <th>DateExamen</th>
-                <th>actions</th>
+                <th>Ouvert</th>
+                <th>Date Examen</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -20,20 +20,20 @@
             <tr>
                 <td>{{ examan.id }}</td>
                 <td>{{ examan.code }}</td>
-                <td>{{ examan.statut ? 'Yes' : 'No' }}</td>
-                <td>{{ examan.dateExamen ? examan.dateExamen|date('Y-m-d') : '' }}</td>
+                <td>{{ examan.statut ? 'Oui' : 'Non' }}</td>
+                <td>{{ examan.dateExamen ? examan.dateExamen|date('d/m/Y') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_examen_show', {'id': examan.id}) }}">show</a>
-                    <a href="{{ path('app_examen_edit', {'id': examan.id}) }}">edit</a>
+                    <a href="{{ path('app_examen_show', {'id': examan.id}) }}" class="btn btn-success">Détails</a>
+                    <a href="{{ path('app_examen_edit', {'id': examan.id}) }}" class="btn btn-success">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun examen trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_examen_new') }}">Create new</a>
+    <a href="{{ path('app_examen_new') }}" class="btn btn-primary" >Créer un nouvel examen</a>
 {% endblock %}

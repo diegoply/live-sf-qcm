@@ -1,11 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Examen{% endblock %}
+{% block title %}Nouvel examen{% endblock %}
 
 {% block body %}
-    <h1>Create new Examen</h1>
-
+    <h1>Nouvel examen</h1>
     {{ include('examen/_form.html.twig') }}
 
-    <a href="{{ path('app_examen_index') }}">back to list</a>
 {% endblock %}

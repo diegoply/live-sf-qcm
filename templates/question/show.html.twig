@@ -12,27 +12,27 @@
                 <td>{{ question.id }}</td>
             </tr>
             <tr>
-                <th>Libelle</th>
+                <th>Libellé</th>
                 <td>{{ question.libelle }}</td>
             </tr>
             <tr>
-                <th>Reponse1</th>
+                <th>Réponse 1</th>
                 <td>{{ question.reponse1 }}</td>
             </tr>
             <tr>
-                <th>Reponse2</th>
+                <th>Réponse 2</th>
                 <td>{{ question.reponse2 }}</td>
             </tr>
             <tr>
-                <th>Reponse3</th>
+                <th>Réponse 3</th>
                 <td>{{ question.reponse3 }}</td>
             </tr>
             <tr>
-                <th>Reponse4</th>
+                <th>Réponse 4</th>
                 <td>{{ question.reponse4 }}</td>
             </tr>
             <tr>
-                <th>Reponse5</th>
+                <th>Réponse 5</th>
                 <td>{{ question.reponse5 }}</td>
             </tr>
             <tr>
@@ -46,9 +46,10 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_question_index') }}">back to list</a>
-
-    <a href="{{ path('app_question_edit', {'id': question.id}) }}">edit</a>
+    <div class="d-flex justify-content-between">
+        <a href="{{ path('app_question_edit', {'id': question.id}) }}" class="btn btn-success">Modifier</a>
+        <a href="{{ path('app_question_index') }}" class="btn btn-primary">Retour à la liste</a>
+    </div>
 
     {{ include('question/_delete_form.html.twig') }}
 {% endblock %}
