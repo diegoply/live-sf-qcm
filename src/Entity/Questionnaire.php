@@ -17,7 +17,7 @@ class Questionnaire
     private ?string $titre = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $matiere = null;
+    private ?Matiere $matiere = null;
 
 
     public function getId(): ?int
@@ -42,7 +42,7 @@ class Questionnaire
         return $this->matiere;
     }
 
-    public function setMatiere(string $matiere): self
+    public function setMatiere(Matiere $matiere): self
     {
         $this->matiere = $matiere;
 
