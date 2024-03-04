@@ -61,5 +61,9 @@ class Matiere {
             if ($questionnaire->getMatiere() === $this){
                 $questionnaire->setMatiere(null);
             }
+            return $this;
+        }
+    
+        
     }
 }
